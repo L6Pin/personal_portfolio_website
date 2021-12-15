@@ -1,0 +1,160 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.portfolioItem {
+  height: 100vh;
+  padding: 71.675px 15px 15px 15px;
+  background: $color-red;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  p {
+    margin: 0;
+  }
+
+  .item-content {
+    padding-top: 60px;
+    position: relative;
+    z-index: 3;
+
+    & i:first-of-type {
+      margin-right: 25px;
+    }
+
+    .fab {
+      width: 30px;
+    }
+
+    .technologies {
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      margin-top: 10px;
+    }
+
+    .item-name {
+      margin-top: 10px;
+      width: 300px;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .item-description {
+      font-family: "Roboto", sans-serif;
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: 300;
+    }
+
+    .item-button {
+      margin-top: 60px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      color: $color-red;
+      display: inline-block;
+      background: #fff;
+      padding: 15px 50px;
+      font-size: 24px;
+    }
+  }
+
+  .item-number-container {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    z-index: 2;
+
+    p {
+      font-size: 40px;
+    }
+
+    .number {
+      text-decoration: underline;
+      font-size: 72px;
+    }
+
+    .number-line{
+      display: none;
+    }
+  }
+
+  .item-picture {
+    position: absolute;
+    z-index: 0;
+    height: 70vh;
+    bottom: 0;
+    left: 30%;
+    mix-blend-mode: screen;
+    opacity: 15%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolioItem {
+    scroll-snap-align: start;
+    @include flex(row, unset, center);
+
+    .item-content {
+      padding: 0;
+      margin-left: 200px;
+      transform: translateY(-20px);
+
+      .technologies {
+      }
+
+      .item-name {
+        width: unset;
+        font-size: 60px;
+      }
+
+      .item-description {
+        font-family: "Roboto", sans-serif;
+        margin-top: 20px;
+        font-size: 40px;
+        width: 540px;
+      }
+    }
+
+    .item-number-container {
+      position: absolute;
+      bottom: 15px;
+      left: unset;
+      right: 15px;
+      z-index: 2;
+      text-align: center;
+
+      p {
+        font-size: 40px;
+      }
+
+      .number {
+        text-decoration: underline;
+        font-size: 72px;
+      }
+
+      .number-line{
+        display: block;
+        width: 1px;
+        height: 250px;
+        background: #fff;
+        margin: 0 auto;
+      }
+
+      .number-text{
+        transform: rotate(90deg);
+        margin-top: 52.8px;
+        margin-bottom: 52.8px;
+      }
+    }
+
+    .item-picture {
+      position: absolute;
+      z-index: 0;
+      height: 100vh;
+      bottom: 0;
+      left: 35%;
+      mix-blend-mode: screen;
+      opacity: 15%;
+    }
+  }
+}

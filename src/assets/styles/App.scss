@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+// font-family: 'Roboto', sans-serif;
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+// font-family: 'Bebas Neue', cursive;
+
+@import "../variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $color-light-gray;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $color-very-dark-gray;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: lighten($color-very-dark-gray, $amount: 0.5);
+  }
+
+  @supports (scrollbar-color: $color-very-dark-gray $color-light-gray) {
+    * {
+      scrollbar-color: $color-very-dark-gray $color-light-gray;
+      scrollbar-width: thin;
+    }
+  }
+}
